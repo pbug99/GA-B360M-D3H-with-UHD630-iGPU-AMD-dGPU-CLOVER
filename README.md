@@ -25,7 +25,7 @@
 
 - Bios : F12
 - Clover Bootloader : Above v2.4k r4920
-- macOS : Above 10.14
+- macOS : 10.14.x
 
 
 ## Bios Setup
@@ -74,7 +74,6 @@
 - SMCSuperIO.kext
 - USBPorts.kext    -    Hackintool generated
 - VirtualSMC.kext
-- VoodooPS2Controller.kext
 
 
 ## ETC
@@ -98,7 +97,7 @@
 
 
 ## Issues
-- PS2 port has not been tested yet
+- PS2 port not works
 
 - FileVault2 not works
 
