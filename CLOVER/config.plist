@@ -68,6 +68,20 @@
 					SU1FSQ==
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change ECDV to EC</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					RUNEVg==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
 			</array>
 		</dict>
 		<key>FixHeaders</key>
@@ -84,7 +98,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>darkwake=no -v debug=0x100 keepsyms=1</string>
+		<string>darkwake=1 -v debug=0x100 keepsyms=1</string>
 		<key>DefaultVolume</key>
 		<string>macOS</string>
 		<key>NeverHibernate</key>
@@ -101,7 +115,7 @@
 			<key>AFGLowPowerState</key>
 			<false/>
 			<key>Inject</key>
-			<integer>92</integer>
+			<integer>15</integer>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
@@ -117,14 +131,10 @@
 				<data>
 				AwCSPg==
 				</data>
-				<key>AAPL,slot-name</key>
-				<string>Internal</string>
 				<key>device-id</key>
 				<data>
 				kj4AAA==
 				</data>
-				<key>device_type</key>
-				<string>Display controller</string>
 				<key>framebuffer-con0-busid</key>
 				<data>
 				AAAAAA==
@@ -237,10 +247,6 @@
 				<data>
 				AAAAgA==
 				</data>
-				<key>hda-gfx</key>
-				<string>onboard-2</string>
-				<key>model</key>
-				<string>Intel UHD Graphics 630</string>
 			</dict>
 		</dict>
 		<key>USB</key>

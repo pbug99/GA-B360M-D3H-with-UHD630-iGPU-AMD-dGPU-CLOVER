@@ -10,22 +10,22 @@
 - M.2 NVME SSD : Samsung PM961 512GB
 - 2.5 SATA SSD : Samsung 960 EVO 250GB
 - Wireless : BCM943602CS
-- Case : Fractal Design Define Mini C Tempered Glass Edition
 - Power : FSP Hyper K 600W 80Plus Standard 230V EU
 - Cooler : Zalman CNPS9X Optima White LED
+- Case : Fractal Design Define Mini C Tempered Glass Edition
 - External Port & Slot : USB 2.0 * 2, USB 3.2 Gen 1 * 4, USB 3.2 Gen 2 * 1, Type C * 1 (USB 3.2 Gen 1), PS2 Port * 1 Displayport * 1, HDMI * 1, DVI-D * 1, D-SUB * 1, Intel Gigabit LAN * 1, 8CH Audio Port
 - Display : Dell P2417H
 - Speaker : Dell AC511
 - Keyboard : Apple Keyboard with Numeric Keypad (A1243)
-- Mouse : Logitech T630
+- Mouse : Logitech MX Master 2, Logitech Ultra thin Touch Mouse T630
 - Windows 10 Pro
 
 
 ## Bios/Clover Bootloader/macOS Version
 
-- Bios : F12
-- Clover Bootloader : Above v2.4k r4920
-- macOS : 10.14.x
+- Bios : F13
+- Clover Bootloader : Above v2.5k
+- macOS : 10.14.X, 10.15.X
 
 
 ## Bios Setup
@@ -36,15 +36,13 @@
 
 ## DSDT Patch
 
-- [sys] Add IMEI
 - [sys] Fix _WAK Arg0 v2
 - [sys] Fix Mutex with non-zero SyncLevel
 - [sys] Fix PNOT/PPNT
 - [sys] HPET Fix
-- [sys] Fix IRQ Fix
+- [sys] IRQ Fix
 - [sys] OS Check Fix (Windows 10)
 - [sys] RTC Fix
-- [sys] Shutdown Fix
 - [sys] Shutdown Fix v2
 - [sys] SMBUS Fix
 
@@ -61,10 +59,10 @@
 
 ## Kexts
 
-- AirportBrcmFixup.kext
+- AGPMInjector.kext    -    Generated with AGPMInjector by Pavo-IM
 - AppleALC.kext
-- BrcmFirmwareRepo.kext
-- BrcmPatchRAM2.kext
+- CPUFriend.kext
+- CPUFriendDataProvider.kext    -    Generated with one-key-cpufriend by stevezhengshiqi
 - EFICheckDisabler.kext
 - IntelMausiEthernet.kext
 - Lilu.kext
@@ -72,8 +70,9 @@
 - SMCLightSensor.kext
 - SMCProcessor.kext
 - SMCSuperIO.kext
-- USBPorts.kext    -    Hackintool generated
+- USBPorts.kext    -    Generated with Hackintool
 - VirtualSMC.kext
+- WhateverGreen.kext
 
 
 ## ETC
@@ -87,10 +86,16 @@
 - Additional patches are required for iMessage and Facetime activation
 - Add a HiDPI patch based on your display resolution
 - Depending on the case and built-in wireless card installed, additional patches of the internal USB port might be required
+- It is recommended that you do a new ACPI patch on your system
 
-***Intel UHD Graphics 630 iGPU with AMD dGPU***
-- This build is suitable for the GA-B360M-D3H system which uses iGPU of 'Intel UHD Graphics 630' and AMD dGPU  
-  If your iGPU is not 'Intel UHD Graphics 630' or there is no AMD dGPU, additional graphics patches might be required
+***Intel® Core™ i7-8700 Processor***
+- CPUFriendDataProvider.kext has been modified to manage the operation of the 'Intel® Core™ i7-8700 Processor'  
+  If your CPU is not 'Intel® Core™ i7-8700 Processor', remove or regenerate the CPUFriendDataProvider.kext
+
+***Intel® UHD Graphics 630 iGPU with AMD dGPU***
+- This build is compatible for the GA-B360M-D3H system which uses iGPU of 'Intel® UHD Graphics 630' and AMD dGPU  
+  If your iGPU is not 'Intel® UHD Graphics 630' or there is no AMD dGPU, additional graphics patches might be required  
+  (First remove all 'Devices/Properties' from config.plist)
 
 ***Works in headless mode***
 - The output ports of all iGPU are the dummy port
